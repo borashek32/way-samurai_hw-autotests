@@ -1,11 +1,33 @@
 .App {
     --header_height: 60px;
+    padding: 107px 0 63px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
-.hw {
-
+.container {
+    margin: 0 auto;
+    max-width: 1140px;
 }
 
 .hwTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 9px;
+}
 
+.hw {
+    padding-top: 24px;
+    padding-bottom: 31px;
+}
+
+hr {
+    height: 1px;
+    color: #D9D9D9;
 }
