@@ -1,7 +1,6 @@
 import React, {ChangeEvent, Dispatch, KeyboardEvent, SetStateAction, useState} from 'react'
 import Greeting from './Greeting'
 import { UserType } from './HW3'
-// import user from "../hw08/User";
 
 type GreetingContainerPropsType = {
   users: Array<UserType> // need to fix any

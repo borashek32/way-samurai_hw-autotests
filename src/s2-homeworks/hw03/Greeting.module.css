@@ -2,34 +2,92 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 7px;
 }
 
 .error {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CC0000;
+    margin-top: 7px;
 }
 
 .input {
+    width: 372px;
+    height: 36px;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px 12px;
 }
 
 .input:focus {
+    color: #000000;
 }
 
 .errorInput {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #CC0000;
+    padding: 8px 12px;
 }
 
 .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    opacity: 0.5;
+    border-radius: 3px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: #0066CC;
+    cursor: pointer;
+    border: none;
+    transition: all .2s ease;
 }
 
 .button:focus {
+    background-color: #0066CC;
 }
 
 .button:active {
+    opacity: 1;
+    background-color: #0066CC;
 }
 
 .button:disabled {
+    background-color: #0066CC;
 }
 
 .text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 9px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .greeting {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
 }

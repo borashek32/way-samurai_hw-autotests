@@ -1,10 +1,7 @@
 import React, {
   ChangeEventHandler,
-  DetailedHTMLProps,
-  FocusEventHandler, HTMLAttributes,
-  KeyboardEvent,
+  FocusEventHandler,
   KeyboardEventHandler,
-  ReactNode
 } from 'react'
 import s from './Greeting.module.css'
 import {UserType} from "./HW3";
@@ -54,9 +51,6 @@ const Greeting: React.FC<GreetingPropsType> = (
                         onKeyDown={onEnter}
                         onBlur={onBlur}
                     />
-                    <div id={'hw3-error'} className={s.error}>
-                        {error}
-                    </div>
                 </div>
 
                 <button
@@ -65,8 +59,11 @@ const Greeting: React.FC<GreetingPropsType> = (
                     className={s.button}
                     disabled={!name.trim()}
                 >
-                    add
+                    Add
                 </button>
+            </div>
+            <div id={'hw3-error'} className={s.error}>
+              {error}
             </div>
 
             {lastUserName && (
