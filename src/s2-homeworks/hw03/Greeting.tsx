@@ -7,7 +7,7 @@ import s from './Greeting.module.css'
 
 type GreetingPropsType = {
     name: string // need to fix any
-    setNameCallback: ChangeEventHandler<HTMLInputElement> // need to fix any
+    setNameCallback?: ChangeEventHandler<HTMLInputElement> // need to fix any
     addUser: (name: string) => void // need to fix any
     onBlur: FocusEventHandler<HTMLInputElement> // need to fix any
     onEnter: KeyboardEventHandler<HTMLInputElement> // need to fix any
