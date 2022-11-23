@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {Dispatch, SetStateAction, useState} from 'react'
 import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
@@ -10,7 +10,9 @@ import GreetingContainer from './GreetingContainer'
 * 4 - в файле GreetingContainer.tsx дописать типизацию пропсов
 * 5 - в файле GreetingContainer.tsx указать нужные типы в useState с name и error
 * 6 - в файле GreetingContainer.tsx дописать тип и логику функции setNameCallback
+*
 * 7 - в файле GreetingContainer.tsx дописать логику функций pureAddUser, pureOnBlur, pureOnEnter и проверить их тестами
+*
 * 8 - в файле GreetingContainer.tsx вычислить количество добавленных и имя последнего (totalUsers, lastUserName)
 * 9 - в файле Greeting.tsx дописать типизацию пропсов
 * 10 - в файле Greeting.tsx вычислить inputClass в зависимости от наличия ошибки
@@ -19,34 +21,47 @@ import GreetingContainer from './GreetingContainer'
 
 // types
 export type UserType = {
-    _id: any // need to fix any
-    name: any // need to fix any
+    _id: string // need to fix any
+    name: string // need to fix any
 }
 
-export const pureAddUserCallback = (name: any, setUsers: any, users: any) => { // need to fix any
+export const pureAddUserCallback = (
+    name: string,
+    setUsers: (user: Array<UserType>) => void,
+    // setUsers: Dispatch<SetStateAction<Array<UserType>>>,
+    users: Array<UserType>
+  ) => { // need to fix any
     const user = { // need to fix
+      _id: v1(),
+      name: name
     }
     setUsers([...users, user])
-}
+    console.log([...users, user])
+  }
 
 const HW3 = () => {
-    const [users, setUsers] = useState<any>([]) // need to fix any
+    const [users, setUsers] = useState<Array<UserType>>([]) // need to fix any
 
-    const addUserCallback = (name: any) => { // need to fix any
+    const addUserCallback = (name: string) => { // need to fix any
+      // console.log(name)
         pureAddUserCallback(name, setUsers, users)
     }
 
     return (
         <div id={'hw3'}>
-            <div className={s2.hwTitle}>Homework #3</div>
-            {/*для автоматической проверки дз (не менять)*/}
-
-            <div className={s2.hw}>
-                <GreetingContainer
-                    users={users}
-                    addUserCallback={addUserCallback}
-                />
-            </div>
+          <hr/>
+          <div className={s2.container}>
+              <div className={s2.hwTitle}>Homework #3</div>
+          </div>
+          <hr/>
+          <div className={s2.container}>
+              <div className={s2.hw}>
+                  <GreetingContainer
+                      users={users}
+                      addUserCallback={addUserCallback}
+                  />
+              </div>
+          </div>
         </div>
     )
 }

@@ -1,15 +1,23 @@
-import React, {ChangeEvent, KeyboardEvent} from 'react'
+import React, {
+  ChangeEventHandler,
+  DetailedHTMLProps,
+  FocusEventHandler, HTMLAttributes,
+  KeyboardEvent,
+  KeyboardEventHandler,
+  ReactNode
+} from 'react'
 import s from './Greeting.module.css'
+import {UserType} from "./HW3";
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    onBlur: any // need to fix any
-    onEnter: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
-    lastUserName?: any // need to fix any
+    name: string // need to fix any
+    setNameCallback: ChangeEventHandler<HTMLInputElement> // need to fix any
+    addUser: (name: string) => void // need to fix any
+    onBlur: FocusEventHandler<HTMLInputElement> // need to fix any
+    onEnter: KeyboardEventHandler<HTMLInputElement> // need to fix any
+    error: React.ReactNode // need to fix any
+    totalUsers: () => number // need to fix any
+    lastUserName?: () => string // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
@@ -32,7 +40,7 @@ const Greeting: React.FC<GreetingPropsType> = (
             <div className={s.text}>
                 {'Людей добавили: '}
                 <span id={'hw3-users-total'}>
-                    {totalUsers}
+                    {totalUsers()}
                 </span>
             </div>
 
@@ -53,7 +61,7 @@ const Greeting: React.FC<GreetingPropsType> = (
 
                 <button
                     id={'hw3-button'}
-                    onClick={addUser}
+                    onClick={() => addUser(name)}
                     className={s.button}
                     disabled={!name.trim()}
                 >
@@ -63,7 +71,7 @@ const Greeting: React.FC<GreetingPropsType> = (
 
             {lastUserName && (
                 <div className={s.greeting}>
-                    Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
+                    Привет <span id={'hw3-last-user'}>{lastUserName()}</span>!
                 </div>
             )}
         </div>
