@@ -1,10 +1,9 @@
 import React, {
   ChangeEventHandler,
   FocusEventHandler,
-  KeyboardEventHandler,
+  KeyboardEventHandler, ReactNode,
 } from 'react'
 import s from './Greeting.module.css'
-import {UserType} from "./HW3";
 
 type GreetingPropsType = {
     name: string // need to fix any
@@ -14,7 +13,7 @@ type GreetingPropsType = {
     onEnter: KeyboardEventHandler<HTMLInputElement> // need to fix any
     error: React.ReactNode // need to fix any
     totalUsers: () => number // need to fix any
-    lastUserName?: () => string // need to fix any
+    lastUserName?: () => ReactNode // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
