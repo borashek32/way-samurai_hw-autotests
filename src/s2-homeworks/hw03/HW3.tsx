@@ -28,7 +28,6 @@ export type UserType = {
 export const pureAddUserCallback = (
     name: string,
     setUsers: (user: Array<UserType>) => void,
-    // setUsers: Dispatch<SetStateAction<Array<UserType>>>,
     users: Array<UserType>
   ) => { // need to fix any
     const user = { // need to fix
@@ -36,14 +35,12 @@ export const pureAddUserCallback = (
       name: name
     }
     setUsers([...users, user])
-    console.log([...users, user])
   }
 
 const HW3 = () => {
     const [users, setUsers] = useState<Array<UserType>>([]) // need to fix any
 
     const addUserCallback = (name: string) => { // need to fix any
-      // console.log(name)
         pureAddUserCallback(name, setUsers, users)
     }
 

@@ -30,25 +30,6 @@ const Greeting: React.FC<GreetingPropsType> = (
   } // деструктуризация пропсов
 ) => {
   // const inputClass = s.errorInput // need to fix with (?:)
-  const inputClass = () => {
-    let inputClassName
-    if (error) {
-      inputClassName = s.errorInput
-    } else {
-      inputClassName = s.input
-    }
-    return inputClassName;
-  }
-
-  // const lastName = () => {
-  //   if (lastUserName.lenght > 0) {
-  //     return (
-  //       <div className={s.greeting}>
-  //         Привет <span id={'hw3-last-user'}>{lastUserName()}</span>!
-  //       </div>
-  //     )
-  //   }
-  // }
 
   return (
     <div id={'hw3-form'} className={s.greetingForm}>
@@ -63,7 +44,7 @@ const Greeting: React.FC<GreetingPropsType> = (
             id={'hw3-input'}
             value={name}
             onChange={setNameCallback}
-            className={inputClass()}
+            className={error ? s.errorInput : s.input}
             onKeyDown={onEnter}
             onBlur={onBlur}
           />
