@@ -10,15 +10,14 @@ const Stand = () => {
 
   const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
 
-  const checkCheckbox = (id: string | undefined, checked: boolean) => {
-    if (checked) {
-      setChecked(!checked)
-    }
-    // console.log("from stand " + stateForAllCheckboxes)
-    // console.log("opposite state " + !stateForAllCheckboxes + " like with ! " + setChecked(!stateForAllCheckboxes))
-    // console.log(checked + " opposite checked " + !checked)
-    // console.log("id " + id)
-  }
+  // const checkCheckbox = (checked: boolean) => {
+  //   // if (checked) {
+  //   //   setChecked(!stateForAllCheckboxes)
+  //   // }
+  //   console.log("from stand " + stateForAllCheckboxes)
+  //   console.log("opposite state " + !stateForAllCheckboxes + " like with ! " + setChecked(!stateForAllCheckboxes))
+  //   console.log(checked + " opposite checked " + !checked)
+  // }
 
   return (
     <div id={'hw4-stand'} className={s.stand}>
@@ -91,7 +90,7 @@ const Stand = () => {
             id={'hw4-super-checkbox-with-text'}
             checked={stateForAllCheckboxes}
             // onChangeChecked={setChecked}
-            onChangeChecked={checkCheckbox}
+            onChangeChecked={() => setChecked(!stateForAllCheckboxes)}
           >
             some text
           </SuperCheckbox>
@@ -101,8 +100,8 @@ const Stand = () => {
           <SuperCheckbox
             id={'hw4-super-checkbox-like-old'}
             checked={stateForAllCheckboxes}
-            onChange={(e) => setChecked(e.currentTarget.checked)}
-            // onChangeChecked={checkCheckbox}
+            // onChange={(e) => setChecked(e.currentTarget.checked)}
+            onChangeChecked={() => setChecked(!stateForAllCheckboxes)}
           />
         </div>
       </div>

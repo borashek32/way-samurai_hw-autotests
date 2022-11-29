@@ -10,7 +10,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
   HTMLInputElement>
 
 type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
-  onChangeChecked?: (id: string | undefined, checked: boolean) => void
+  onChangeChecked?: (checked: boolean) => void
   spanClassName?: string
 }
 
@@ -22,7 +22,6 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     spanClassName,
     children, // в эту переменную попадёт текст, типизировать не нужно так как он затипизирован в React.FC
     id,
-    checked,
 
     ...restProps // все остальные пропсы попадут в объект restProps
   }
@@ -30,8 +29,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
     // задачка на написание онченджа
     if (onChangeChecked) {
-      onChangeChecked(id, e.currentTarget.checked)
-      // console.log("from supercheckbox " + id + " " + e.currentTarget.checked + " " + e.currentTarget.id)
+      onChangeChecked(e.currentTarget.checked)
     }
   }
 
