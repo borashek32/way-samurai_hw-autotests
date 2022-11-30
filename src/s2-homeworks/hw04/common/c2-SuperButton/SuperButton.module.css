@@ -12,10 +12,10 @@
     justify-content: center;
     cursor: pointer;
     transition: all .3s ease;
+    background: #0066CC;
 }
 
-.disabled,
-.button:disabled {
+.disabled {
     background: #004D99;
     opacity: 0.5;
 }
@@ -27,7 +27,6 @@
 }
 
 .default {
-    background: #0066CC;
 }
 
 .red {
