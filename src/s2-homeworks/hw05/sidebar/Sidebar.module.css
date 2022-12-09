@@ -24,7 +24,7 @@
     gap: 45px;
 }
 
-.link {
+.nav a {
     text-decoration: none;
     font-style: normal;
     font-weight: 600;
@@ -37,7 +37,7 @@
     color: #0059B2;
 }
 
-.active {
+.nav a.active {
     color: #58ACFF;
 }
 
