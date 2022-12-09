@@ -1,19 +1,32 @@
 .sidebar {
-    position: absolute;
-    left: -310px;
-    height: 100%;
-    width: 310px;
     background-color: #fff;
-    z-index: 5;
+    z-index: 1003;
     top: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    left: 0;
 }
 
 .sidebar.open {
     left: 0;
-    top: 0;
+    height: 100vh;
+    width: 310px;
+    background-color: #fff;
 }
 
 .background {
+    background-color: rgba(173, 171, 171, 0.49);
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    height: 100%;
+    width: 100%;
+    position: fixed;
 }
 
 .nav {

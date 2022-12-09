@@ -6,6 +6,7 @@
 
 .header {
     position: fixed;
+    z-index: 1000;
     width: 100%;
     background: #FFFFFF;
     height: 60px;
