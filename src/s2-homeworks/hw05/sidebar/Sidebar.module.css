@@ -3,7 +3,7 @@
     z-index: 1003;
     top: 0;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: all 0.5s ease;
     height: 100%;
     width: 0;
     position: fixed;
@@ -15,6 +15,7 @@
     height: 100vh;
     width: 310px;
     background-color: #fff;
+    transition: all 0.5s ease;
 }
 
 .background {
@@ -52,6 +53,7 @@
 
 .nav a.active {
     color: #58ACFF;
+    text-decoration: underline;
 }
 
 .buttonWrapper {
