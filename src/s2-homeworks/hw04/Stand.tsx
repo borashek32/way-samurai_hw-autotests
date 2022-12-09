@@ -10,15 +10,6 @@ const Stand = () => {
 
   const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
 
-  // const checkCheckbox = (checked: boolean) => {
-  //   // if (checked) {
-  //   //   setChecked(!stateForAllCheckboxes)
-  //   // }
-  //   console.log("from stand " + stateForAllCheckboxes)
-  //   console.log("opposite state " + !stateForAllCheckboxes + " like with ! " + setChecked(!stateForAllCheckboxes))
-  //   console.log(checked + " opposite checked " + !checked)
-  // }
-
   return (
     <div id={'hw4-stand'} className={s.stand}>
       <div className={s.inputs}>

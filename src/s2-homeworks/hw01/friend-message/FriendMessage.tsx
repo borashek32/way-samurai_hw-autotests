@@ -10,7 +10,7 @@ export type MessageType = {
 const FriendMessage = (props: MessageType) => {
     return (
         <div
-            id={'hw1-friend-message-' + props.message.id}
+            id={'hw1-friend-Messages-' + props.message.id}
             className={s.friendMessage}
         >
             <div className={s.friendImageAndText}>
