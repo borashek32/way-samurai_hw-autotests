@@ -1,16 +1,29 @@
 .sidebar {
+    position: absolute;
+    left: -310px;
+    height: 100%;
+    width: 310px;
+    background-color: #fff;
+    z-index: 5;
 }
 
 .sidebar.open {
+    left: 0;
 }
 
 .background {
 }
 
 .nav {
+    position: absolute;
+    margin: 0 0 0 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
 }
 
 .nav a {
+    text-decoration: none;
 }
 
 .nav a:hover {
@@ -18,7 +31,16 @@
 
 .nav a.active {
 }
+
+.buttonWrapper {
+    display: flex;
+    justify-content: end;
+    padding: 22px 29px 28px 0;
+}
+
 .close {
+    border: none;
+    background-color: #fff;
 }
 
 .close img {
