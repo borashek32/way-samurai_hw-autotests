@@ -33,3 +33,9 @@ hr {
     height: 1px;
     color: #D9D9D9;
 }
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
