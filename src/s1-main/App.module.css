@@ -26,16 +26,10 @@
 .hw {
     padding-top: 24px;
     padding-bottom: 31px;
-    height: 336px;
+    min-height: 336px;
 }
 
 hr {
     height: 1px;
     color: #D9D9D9;
-}
-
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 }
