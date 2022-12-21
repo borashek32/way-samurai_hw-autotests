@@ -1,4 +1,7 @@
 .radio {
+    width: 22px;
+    height: 22px;
+    color: #000
 }
 
 .radio::before {
@@ -9,7 +12,24 @@
 }
 
 .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.label input {
+    color: #000;
+    cursor: pointer;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 22px;
 }
+
