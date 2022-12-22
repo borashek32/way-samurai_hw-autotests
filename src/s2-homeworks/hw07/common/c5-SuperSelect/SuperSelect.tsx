@@ -4,15 +4,12 @@ import React, {
   ChangeEvent, SetStateAction,
 } from 'react'
 import s from './SuperSelect.module.css'
-import {ArrType} from "../../HW7";
 
-type DefaultSelectPropsType = DetailedHTMLProps<
-  SelectHTMLAttributes<HTMLSelectElement>,
-  HTMLSelectElement
-  >
+type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>,
+  HTMLSelectElement>
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-  options: ArrType[]
+  options: any[]
   onChangeOption?: (option: SetStateAction<number>) => void
 }
 
@@ -20,6 +17,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
                                                        options,
                                                        className,
                                                        onChange,
+                                                       value,
                                                        onChangeOption,
                                                        ...restProps
                                                      }) => {
@@ -30,6 +28,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         className={s.option}
         key={o.id}
         value={o.id}
+        selected={o.id === value}
       >
         {o.value}
       </option>
@@ -39,8 +38,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
   const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
     // делают студенты
     if (onChangeOption) {
-      onChangeOption(e.currentTarget.selectedIndex)
-      console.log("select", e.currentTarget.selectedIndex)
+      onChangeOption(e.currentTarget.selectedIndex + 1)
     }
   }
 
