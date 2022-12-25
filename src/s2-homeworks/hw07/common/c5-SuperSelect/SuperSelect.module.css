@@ -1,17 +1,65 @@
 .select {
-    width: 165px;
+    width: 180px;
     height: 24px;
-    padding: 2px 0 5px 10px;
+    padding: 2px 10px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
-
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 24px 24px;
+    background-image: url("chevron-down.svg");
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #C2C2C2;
+    cursor: pointer;
+}
+.active {
+    width: 180px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .select:focus {
+    outline: none;
 }
 
-
+.option {
+    background-color: #fff;
+    padding: 5px 10px;
+    border-bottom: 1px solid #C2C2C2;
+    border-right: 1px solid #C2C2C2;
+    border-left: 1px solid #C2C2C2;
+    transition: all .3s ease;
+}
+.option:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
 .option:hover {
+    color: #0066CC;
+    cursor: pointer;
+}
+.activeOption {
+    border: none;
+    background-color: #0066CC;
+    color: #fff;
+}
+.activeOption:hover {
+    color: #fff;
+    background-color: #0066CC;
+}
+
+.selectWrapper {
+    position: relative;
+}
+.selectedOption {
+    position: absolute;
+    top: 4px;
+    left: 10px
 }

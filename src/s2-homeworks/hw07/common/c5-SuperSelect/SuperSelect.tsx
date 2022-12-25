@@ -1,16 +1,16 @@
 import React, {
   SelectHTMLAttributes,
-  DetailedHTMLProps,
-  ChangeEvent, SetStateAction,
+  DetailedHTMLProps, useState
 } from 'react'
 import s from './SuperSelect.module.css'
+import {OptionType} from "../../HW7";
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>,
   HTMLSelectElement>
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-  options: any[]
-  onChangeOption?: (option: SetStateAction<number>) => void
+  options: OptionType[]
+  onChangeOption?: (id: number) => void
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
@@ -21,37 +21,44 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
                                                        onChangeOption,
                                                        ...restProps
                                                      }) => {
-  const mappedOptions: any[] = options
-    ? options.map((o) => (
-      <option
-        id={'hw7-option-' + o.id}
-        className={s.option}
-        key={o.id}
-        value={o.id}
-        selected={o.id === value}
-      >
-        {o.value}
-      </option>
-    ))
-    : [] // map options with key
 
-  const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-    // делают студенты
+  const [active, setActive] = useState(false)
+  const showOptions = () => setActive(!active)
+
+  const onChangeCallback = (id: number) => {
     if (onChangeOption) {
-      onChangeOption(e.currentTarget.selectedIndex + 1)
+      onChangeOption(id)
+      setActive(!active)
     }
   }
+  const selectedOption = options.filter(o => o.id === value)[0].value
 
-  const finalSelectClassName = s.select + (className ? ' ' + className : '')
+  const mappedOptions: any[] = options
+    ? options.map((o) => (
+        <option
+          id={'hw7-option-' + o.id}
+          className={s.option + ' ' + (value === o.id ? s.activeOption : '')}
+          onClick={() => onChangeCallback(o.id)}
+          key={o.id}
+          value={o.id}
+          selected={o.id === value}
+        >
+          {o.value}
+        </option>
+      )
+    )
+    : []
 
   return (
-    <select
-      className={finalSelectClassName}
-      onChange={onChangeCallback}
-      {...restProps}
-    >
-      {mappedOptions}
-    </select>
+    <div className={s.selectWrapper}>
+      <select
+        className={s.select + (active ? ' ' + s.active : '')}
+        {...restProps}
+        onClick={showOptions}
+      ></select>
+      <p className={s.selectedOption}>{selectedOption}</p>
+      {active && mappedOptions}
+    </div>
   )
 }
 

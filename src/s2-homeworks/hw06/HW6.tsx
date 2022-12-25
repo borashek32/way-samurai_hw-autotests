@@ -4,10 +4,6 @@ import {restoreState, saveState} from './localStorage/localStorage'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s from './HW6.module.css'
-import Message from "../hw01/message/Message";
-import FriendMessage from "../hw01/friend-message/FriendMessage";
-import MessageSender from "../hw01/message-sender/MessageSender";
-import {friendMessage0, message0} from "../hw01/HW1";
 
 /*
  * 1 - в файле SuperEditableSpan.tsx дописать логику функций onEnterCallback, onBlurCallback, onDoubleClickCallBack
@@ -23,7 +19,6 @@ const HW6 = () => {
   }
   const restore = () => {
     // делают студенты
-
     setValue(restoreState<string>('hw6-editable-span-value', value))
   }
 
