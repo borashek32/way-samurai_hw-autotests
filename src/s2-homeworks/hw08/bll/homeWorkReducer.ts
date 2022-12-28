@@ -12,7 +12,8 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
         newState = state.sort((a, b) => a.name.localeCompare(b.name))
         return newState // need to fix
       } else {
-        return state.sort((a, b) => b.name.localeCompare(a.name)) // need to fix
+        newState = state.sort((a, b) => b.name.localeCompare(a.name))
+        return newState // need to fix
       }
     }
     case 'check': {
