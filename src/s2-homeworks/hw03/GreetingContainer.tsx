@@ -14,20 +14,19 @@ export const pureAddUser = (
   addUserCallback: (name: string) => void) =>
 {
   // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-  if (!name || name.trim() == "") {
+  if (!name || name.trim() === "") {
     setError('Ошибка! Введите имя!')
   } else {
     addUserCallback(name.trim())
-    // console.log(name)
     setName('')
   }
 }
 
 export const pureOnBlur = (name: string, setError: Dispatch<SetStateAction<string>>) => {
   // если имя пустое - показать ошибку
-  if (!name || name.trim() == '') {
-    setError('Ошибка! Введите имя!')
-  }
+  // if (name.trim() !== '') {
+  //   setError('Ошибка! Вы не нажали кнопку "Add"!')
+  // }
 }
 
 export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => void) => {
@@ -36,9 +35,6 @@ export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => v
     addUser()
   }
 }
-
-// более простой и понятный для новичков
-// function GreetingContainer(props: GreetingPropsType) {
 
 // более современный и удобный для про :)
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
@@ -51,7 +47,6 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
   const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
     setName(e.currentTarget.value) // need to fix
-    error && setError('')
   }
   const addUser = () => {
     pureAddUser(name, setError, setName, addUserCallback)
@@ -65,21 +60,12 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     pureOnEnter(e, addUser)
   }
 
-  const totalUsers = () => {
-    let allUsersQuantity;
-    if (users) {
-      allUsersQuantity = users.length;
-    } else {
-      allUsersQuantity = 0;
-    }
-    return allUsersQuantity;
-  } // need to fix
+  const onFocus = () => {
+    setError('')
+  }
 
-  const lastUserName = () => {
-    if (totalUsers() > 0) {
-      return users[users.length - 1].name;
-    }
-  } // need to fix
+  const totalUsers = users ? users.length : ''
+  const lastUserName = totalUsers > 0 ? users[users.length - 1].name : ''
 
   return (
     <Greeting
@@ -88,6 +74,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
       addUser={addUser}
       onBlur={onBlur}
       onEnter={onEnter}
+      onFocus={onFocus}
       error={error}
       totalUsers={totalUsers}
       lastUserName={lastUserName}
