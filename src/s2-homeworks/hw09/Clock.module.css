@@ -1,10 +1,14 @@
 .buttonsContainer {
+    display: flex;
+    gap: 21px;
 }
 
 .clock {
 }
 
 .watch {
+    width: 174px;
+    height: 24px;
 }
 
 .watch strong {

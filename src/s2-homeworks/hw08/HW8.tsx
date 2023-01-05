@@ -54,7 +54,7 @@ const HW8 = () => {
   }
 
   return (
-    <div id={'hw3'}>
+    <div id={'hw8'}>
       <div className={s2.container}>
         <div className={s2.hwTitle}>Homework #8</div>
       </div>
@@ -100,6 +100,7 @@ const HW8 = () => {
           </div>
         </div>
       </div>
+      <hr/>
     </div>
   )
 }
