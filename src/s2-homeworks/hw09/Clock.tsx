@@ -12,12 +12,12 @@ function Clock() {
   const start = () => {
     // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
     // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-
+    setTimeout(setTimerId())
   }
 
   const stop = () => {
     // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
-
+    setTimerId()
   }
 
   const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
@@ -34,13 +34,18 @@ function Clock() {
   const currentSeconds = currentData.getSeconds();
   const stringTime = currentHours + ":" + currentMinutes + ":" + currentSeconds || <br/>
 
+// 06.01.2022
   const currentYear = currentData.getFullYear();
   const currentMonth = currentData.getMonth();
   const currentDay = currentData.getDate();
-  const stringDate = "0" + currentDay + "." + "0" + (currentMonth + 1) + "." + currentYear
+  const stringDate = (currentDay < 10 ? "0" + currentDay : '' + currentDay)
+    + "."
+    + (currentMonth + 1 < 10 ? "0" + (currentMonth + 1) : '' + currentMonth)
+    + "."
+    + currentYear
 
   // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-  const stringDateFormatter = date.getDate() || <br/> // пишут студенты
+  const stringDateFormatter = date.getDay() || <br/> // пишут студенты
   const stringDay = stringDateFormatter === 0 ? "Sunday"
     : stringDateFormatter === 1 ? "Monday"
       : stringDateFormatter === 2 ? "Tuesday"
@@ -61,8 +66,7 @@ function Clock() {
                   : stringMonthFormatter === 8 ? "September"
                     : stringMonthFormatter === 9 ? "October"
                       : stringMonthFormatter === 10 ? "November"
-                        : stringMonthFormatter === 11 ? "December"
-                          : "January"
+                        : "December"
 
   return (
     <div className={s.clock}>
@@ -74,16 +78,16 @@ function Clock() {
       >
         <span id={'hw9-day'}>{stringDay}</span>,{' '}
         <span id={'hw9-time'}>
-                    <strong>{stringTime}</strong>
-                </span>
+          <strong>{stringTime}</strong>
+        </span>
       </div>
 
       <div id={'hw9-more'}>
         <div className={s.more}>
           {show ? (
             <>
-              <span id={'hw9-month'}>{stringDate}</span>,{' '}
-              <span id={'hw9-date'}>{stringMonth}</span>
+              <span id={'hw9-date'}>{stringDate}</span>,{' '}
+              <span id={'hw9-month'}>{stringMonth}</span>
             </>
           ) : (
             <>
@@ -96,14 +100,14 @@ function Clock() {
       <div className={s.buttonsContainer}>
         <SuperButton
           id={'hw9-button-start'}
-          disabled={true} // пишут студенты // задизэйблить если таймер запущен
+          disabled={timerId ? true : false} // пишут студенты // задизэйблить если таймер запущен
           onClick={start}
         >
           start
         </SuperButton>
         <SuperButton
           id={'hw9-button-stop'}
-          disabled={true} // пишут студенты // задизэйблить если таймер не запущен
+          disabled={timerId ? true : false} // пишут студенты // задизэйблить если таймер не запущен
           onClick={stop}
         >
           stop
