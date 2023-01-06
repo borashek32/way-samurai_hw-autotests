@@ -55,7 +55,7 @@
     background: #B31232;
 }
 
-.disabled {
+button:disabled {
     background: #0059B3;
     opacity: 0.5;
 }
