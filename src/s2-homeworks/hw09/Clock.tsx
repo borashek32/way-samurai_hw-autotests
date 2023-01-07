@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import {restoreState} from '../hw06/localStorage/localStorage'
-import s from './Clock.module.css'
+import styles from './Clock.module.css'
 
 function Clock() {
   const [timerId, setTimerId] = useState<number | undefined>(undefined)
@@ -12,22 +12,19 @@ function Clock() {
   const start = () => {
     // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
     // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-    setTimerId(date.getTime())
-  }
-
-  useEffect(() => {
-    if (timerId) {
-      debugger
-      setTimeout(() => {
-        setDate(date)
+    if (!timerId) {
+      const id: number = window.setInterval(() => {
+        setDate(new Date())
       }, 1000)
+      setTimerId(id)
     }
-  })
-  console.log(new Date(restoreState('hw9-date', Date.now())))
-
+  }
   const stop = () => {
     // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
-    setTimerId(undefined)
+    if(timerId){
+      clearInterval(timerId)
+      setTimerId(undefined)
+    }
   }
 
   const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
@@ -39,40 +36,25 @@ function Clock() {
 
   const stringTime = date.toLocaleTimeString() || <br/>
 
+  // const stringDate = date.toLocaleDateString() // 10/02/2022
   const stringDate = (date.getDate() < 10 ? "0" + date.getDate() : '' + date.getDate())
     + "."
     + (date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : '' + date.getMonth() + 1)
     + "."
-    + date.getFullYear()
+    + date.getFullYear() // 10.02.2022
 
   // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-  const stringDay = date.getDay() === 0 ? "Sunday"
-    : date.getDay() === 1 ? "Monday"
-      : date.getDay() === 2 ? "Tuesday"
-        : date.getDay() === 3 ? "Wednesday"
-          : date.getDay() === 4 ? "Thursday"
-            : date.getDay() === 5 ? "Friday"
-              : "Saturday" // пишут студенты
+  const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  const stringDay = weekDay[date.getDay()] // пишут студенты
 
-  const stringMonth = date.getMonth() === 0 ? "January"
-    : date.getMonth() === 1 ? "February"
-      : date.getMonth() === 2 ? "March"
-        : date.getMonth() === 3 ? "April"
-          : date.getMonth() === 4 ? "May"
-            : date.getMonth() === 5 ? "June"
-              : date.getMonth() === 6 ? "July"
-                : date.getMonth() === 7 ? "August"
-                  : date.getMonth() === 8 ? "September"
-                    : date.getMonth() === 9 ? "October"
-                      : date.getMonth() === 10 ? "November"
-                        : date.getMonth() === 11 ? "December"
-                          : ''  || <br/> // пишут студенты
+  const yearMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  const stringMonth = yearMonth[date.getMonth()]  || <br/> // пишут студенты
   
   return (
-    <div className={s.clock}>
+    <div className={styles.clock}>
       <div
         id={'hw9-watch'}
-        className={s.watch}
+        className={styles.watch}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
@@ -83,7 +65,7 @@ function Clock() {
       </div>
 
       <div id={'hw9-more'}>
-        <div className={s.more}>
+        <div className={styles.more}>
           {show ? (
             <>
               <span id={'hw9-date'}>{stringDate}</span>,{' '}
@@ -97,10 +79,10 @@ function Clock() {
         </div>
       </div>
 
-      <div className={s.buttonsContainer}>
+      <div className={styles.buttonsContainer}>
         <SuperButton
           id={'hw9-button-start'}
-          disabled={typeof timerId === "number"} // пишут студенты // задизэйблить если таймер запущен
+          disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
           xType={'default'}
           onClick={start}
         >
@@ -108,13 +90,15 @@ function Clock() {
         </SuperButton>
         <SuperButton
           id={'hw9-button-stop'}
-          disabled={typeof timerId === "undefined"} // пишут студенты // задизэйблить если таймер не запущен
+          disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
           xType={'default'}
           onClick={stop}
         >
           stop
         </SuperButton>
       </div>
+
+
     </div>
   )
 }
