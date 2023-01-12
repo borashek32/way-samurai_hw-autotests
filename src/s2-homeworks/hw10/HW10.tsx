@@ -20,7 +20,7 @@ const HW10 = () => {
   const isLoading = useSelector<AppStoreType>(state => state.loading)
   const dispatch = useDispatch()
 
-  const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
+  const setLoading = (isLoading: boolean) => { // пишет студент // показать крутилку на 1,5 секунд
     // dispatch
     setTimeout(() => {
       dispatch(loadingAC(isLoading))
@@ -47,7 +47,7 @@ const HW10 = () => {
             <SuperButton
               id={'hw10-button-start-loading'}
               xType={'default'}
-              onClick={setLoading}
+              onClick={() => setLoading}
             >
               Set loading...
             </SuperButton>
