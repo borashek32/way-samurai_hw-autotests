@@ -41,7 +41,7 @@ function Clock() {
     + "."
     + (date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : '' + date.getMonth() + 1)
     + "."
-    + date.getFullYear() // 10.02.2022
+    + date.getFullYear() // 10.02.2022 по макету разделаитель - точка
 
   // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
   const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
