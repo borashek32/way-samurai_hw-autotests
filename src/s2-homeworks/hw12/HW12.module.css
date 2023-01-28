@@ -19,7 +19,8 @@ html {
 }
 
 .select {
-
+    color: var(--color);
+    background-color: var(--background);
 }
 .titleName {
     font-style: normal;
@@ -27,4 +28,5 @@ html {
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 6px;
+    color: var(--color)
 }
