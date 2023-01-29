@@ -22,7 +22,7 @@
 
 .thead {
     height: 36px;
-    background-color: #E5E5E5;
+    background-color: var(--background);
     border-collapse: collapse;
     border-radius: 2px 2px 0 0;
     font-weight: 600;
@@ -33,7 +33,7 @@
     padding: 16px;
     font-size: 14px;
     line-height: 16px;
-    color: #000000;
+    color: var(--color-text);
     text-align: left;
     width: 300px;
     border-bottom: 1px solid #E5E5E5;
@@ -44,7 +44,7 @@
     padding: 16px;
     font-size: 14px;
     line-height: 16px;
-    color: #000000;
+    color: var(--color-text);
     text-align: left;
     width: 300px;
     border-bottom: 1px solid #E5E5E5;

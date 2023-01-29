@@ -15,6 +15,10 @@
     height: 37px;
 }
 
+.name p {
+    color: var(--color-text)
+}
+
 .closeButton {
     display: flex;
     align-items: center;
@@ -24,6 +28,7 @@
 
     background-color: transparent;
     border: none;
+    color: var(--color-text);
     border-left: 1.5px solid var(--color);
 
     font-weight: 900;

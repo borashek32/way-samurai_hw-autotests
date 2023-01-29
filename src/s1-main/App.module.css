@@ -1,3 +1,5 @@
+@import url("./../variables.css");
+
 .App {
     --header_height: 60px;
     padding: 0;
@@ -21,6 +23,7 @@
     line-height: 27px;
     margin-bottom: 9px;
     margin-top: 39px;
+    color: var(--color)
 }
 
 .hw {

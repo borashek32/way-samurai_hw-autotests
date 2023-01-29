@@ -1,7 +1,5 @@
-import React, {
-  SelectHTMLAttributes,
-  DetailedHTMLProps, useState
-} from 'react'
+import React, {SelectHTMLAttributes, DetailedHTMLProps, useState} from 'react'
+import svg from "./chevron-down.svg"
 import s from './SuperSelect.module.css'
 import {OptionType} from "../../HW7";
 
@@ -55,7 +53,8 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         className={s.select + (active ? ' ' + s.active : '')}
         {...restProps}
         onClick={showOptions}
-      ></select>
+      >
+      </select>
       <p className={s.selectedOption}>{selectedOption}</p>
       {active && mappedOptions}
     </div>

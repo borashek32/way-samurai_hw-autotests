@@ -48,7 +48,7 @@ const HW3 = () => {
         <div id={'hw3'}>
           <hr/>
           <div className={s2.container}>
-              <div className={s2.hwTitle}>Homework #3</div>
+              <div className={s2.hwTitle}>Homework №3</div>
           </div>
           <hr/>
           <div className={s2.container}>

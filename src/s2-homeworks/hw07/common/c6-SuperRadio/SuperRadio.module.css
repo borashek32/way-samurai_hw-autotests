@@ -3,7 +3,7 @@
     left: 0;
     top: 0;
     content: "";
-    border: 2px solid #000;
+    border: 2px solid var(--color-text);
     width: 23px;
     height: 23px;
     border-radius: 50%;
@@ -20,7 +20,7 @@
     position: absolute;
     left: 3px;
     top: 3px;
-    background-color: #000;
+    background-color: var(--color-text);
     width: 13px;
     height: 13px;
     border-radius: 50%;
@@ -44,5 +44,6 @@
     flex-direction: column;
     align-items: start;
     gap: 22px;
+    color: var(--color-text);
 }
 

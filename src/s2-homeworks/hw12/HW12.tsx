@@ -39,7 +39,7 @@ const HW12 = () => {
   return (
     <div id={"hw12"}>
       <div className={s2.container}>
-        <div className={s2.hwTitle}>Homework #12</div>
+        <div className={s2.hwTitle}>Homework №12</div>
       </div>
       <hr/>
       {/*демонстрация возможностей компонент:*/}

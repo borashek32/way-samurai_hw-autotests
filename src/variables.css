@@ -1,0 +1,30 @@
+[data-theme='1'] {
+    --color-text: #000000;
+    --background: #FFFFFF;
+}
+
+[data-theme='2'] {
+    --color-text: #000000;
+    --background: #DDEEFF;
+}
+
+[data-theme='3'] {
+    --color-text: #FFFFFF;
+    --background: #212A34;
+}
+
+.all {
+    --color: #06c;
+}
+
+.low {
+    --color: #0c2;
+}
+
+.high {
+    --color: #c00;
+}
+
+.middle {
+    --color: #cc9c00;
+}
