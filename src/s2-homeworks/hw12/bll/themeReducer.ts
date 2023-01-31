@@ -1,7 +1,7 @@
 import {OptionType} from "../../hw07/HW7";
 
 const initState: OptionType = {
-  id: 1,
+  id: "1",
   value: 'light'
 }
 const SET_THEME_ID = 'SET_THEME_ID'
@@ -12,6 +12,7 @@ export const themeReducer = (state = initState, action: ActionType): OptionType 
   switch (action.type) {
     // дописать
     case SET_THEME_ID:
+      debugger
       return {
         ...state,
         id: action.id
@@ -21,4 +22,4 @@ export const themeReducer = (state = initState, action: ActionType): OptionType 
   }
 }
 
-export const changeThemeId = (id: number) => ({type: SET_THEME_ID, id}) // fix any
+export const changeThemeId = (id: string) => ({type: SET_THEME_ID, id}) // fix any

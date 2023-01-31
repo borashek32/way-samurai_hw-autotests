@@ -18,7 +18,7 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
   options?: any[] //
-  onChangeOption?: (option: number) => void //
+  onChangeOption?: (option: string) => void //
   spanProps?: DefaultSpanPropsType // пропсы для спана // was ?
 }
 
@@ -32,7 +32,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                                                      spanProps,
                                                      ...restProps
                                                    }) => {
-  const onChangeCallback = (id: number) => {
+  const onChangeCallback = (id: string) => {
     // делают студенты
     if (onChangeOption) onChangeOption(id)
   }
