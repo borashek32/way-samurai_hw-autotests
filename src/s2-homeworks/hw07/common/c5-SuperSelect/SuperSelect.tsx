@@ -8,7 +8,7 @@ type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectE
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
   options: OptionType[]
-  onChangeOption?: (id: string) => void
+  onChangeOption?: (id: number) => void
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
@@ -23,7 +23,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
   const [active, setActive] = useState(false)
   const showOptions = () => setActive(!active)
 
-  const onChangeCallback = (id: string) => {
+  const onChangeCallback = (id: number) => {
     if (onChangeOption) {
       onChangeOption(id)
       setActive(!active)

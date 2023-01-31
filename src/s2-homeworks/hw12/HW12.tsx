@@ -16,23 +16,22 @@ import {changeThemeId} from "./bll/themeReducer";
 * */
 
 const themes: OptionType[] = [
-  {id: "1", value: 'light'},
-  {id: "2", value: 'blue'},
-  {id: "3", value: 'dark'},
+  {id: 1, value: 'light'},
+  {id: 2, value: 'blue'},
+  {id: 3, value: 'dark'},
 ]
 
 const HW12 = () => {
   // взять ид темы из редакса
-  const themeId = useSelector<AppStoreType, string>(state => state.theme.id)
+  const themeId = useSelector<AppStoreType, number>(state => state.theme.id)
   const dispatch = useDispatch()
 
-  const change = (id: string) => { // дописать функцию
+  const change = (id: number) => { // дописать функцию
     dispatch(changeThemeId(id))
-    debugger
   }
 
   useEffect(() => {
-    document.documentElement.dataset.theme = themeId + ''
+    document.documentElement.dataset.theme = +themeId + ''
   }, [themeId])
 
   const select = s3.select + " " + s.select
