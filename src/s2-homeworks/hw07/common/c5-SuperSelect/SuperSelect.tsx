@@ -32,7 +32,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
   const selectedOption = options.filter(o => o.id === value)[0].value
 
   const mappedOptions: any[] = options
-    ? options.map((o) => (
+    ? options.map((o, index) => (
         <option
           id={'hw7-option-' + o.id}
           className={s.option + ' ' + (value === o.id ? s.activeOption : '')}
