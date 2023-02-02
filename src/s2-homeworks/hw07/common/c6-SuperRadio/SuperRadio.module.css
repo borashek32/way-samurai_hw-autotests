@@ -42,7 +42,7 @@
 .options {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 22px;
     color: var(--color-text);
 }

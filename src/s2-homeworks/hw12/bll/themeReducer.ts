@@ -12,6 +12,7 @@ export const themeReducer = (state = initState, action: ActionType): OptionType 
   switch (action.type) {
     // дописать
     case SET_THEME_ID:
+      // debugger
       return {
         ...state,
         id: action.id

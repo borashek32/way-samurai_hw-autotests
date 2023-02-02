@@ -8,6 +8,13 @@ import {AppStoreType} from '../hw10/bll/store';
 import {OptionType} from "../hw07/HW7";
 import {changeThemeId} from "./bll/themeReducer";
 
+/*
+* 1 - в файле themeReducer.ts написать нужные типы вместо any, дописать редьюсер
+* 2 - получить id из редакса
+* 3 - дописать тип и логику функции change
+* 4 - передать пропсы в SuperSelect
+* */
+
 const themes: OptionType[] = [
   {id: 1, value: 'light'},
   {id: 2, value: 'blue'},
@@ -21,10 +28,11 @@ const HW12 = () => {
 
   const change = (id: number) => { // дописать функцию
     dispatch(changeThemeId(id))
+    debugger
   }
 
   useEffect(() => {
-    document.documentElement.dataset.theme = themeId + ''
+    document.documentElement.dataset.theme = +themeId + ''
   }, [themeId])
 
   const select = s3.select + " " + s.select
