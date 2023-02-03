@@ -23,16 +23,16 @@ const themes: OptionType[] = [
 
 const HW12 = () => {
   // взять ид темы из редакса
-  const themeId = useSelector<AppStoreType, number>(state => state.theme.id)
+  const themeId = useSelector<AppStoreType, number>(state => state.theme.themeId)
   const dispatch = useDispatch()
 
   const change = (id: number) => { // дописать функцию
     dispatch(changeThemeId(id))
-    debugger
+    // debugger
   }
 
   useEffect(() => {
-    document.documentElement.dataset.theme = +themeId + ''
+    document.documentElement.dataset.theme = themeId + ''
   }, [themeId])
 
   const select = s3.select + " " + s.select

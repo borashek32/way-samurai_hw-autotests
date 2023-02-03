@@ -1,21 +1,18 @@
-import {OptionType} from "../../hw07/HW7";
-
-const initState: OptionType = {
-  id: 1,
-  value: 'light'
+const initState = {
+  themeId: 1
 }
 const SET_THEME_ID = 'SET_THEME_ID'
 
 type ActionType = ReturnType<typeof changeThemeId>
 
-export const themeReducer = (state = initState, action: ActionType): OptionType => { // fix any
+export const themeReducer = (state = initState, action: ActionType) => { // fix any
   switch (action.type) {
     // дописать
     case SET_THEME_ID:
       // debugger
       return {
         ...state,
-        id: action.id
+        themeId: action.id
       }
     default:
       return state
