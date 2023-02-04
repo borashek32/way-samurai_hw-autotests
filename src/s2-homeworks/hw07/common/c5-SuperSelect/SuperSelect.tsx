@@ -53,10 +53,10 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         {...restProps}
         onClick={showOptions}
       >
-        {mappedOptions}
+        {/*{mappedOptions}*/}
       </select>
-      {/*<p className={s.selectedOption}>{selectedOption}</p>*/}
-      {/*{active && mappedOptions}*/}
+      <p className={s.selectedOption}>{selectedOption}</p>
+      {active && mappedOptions}
     </div>
   )
 }
