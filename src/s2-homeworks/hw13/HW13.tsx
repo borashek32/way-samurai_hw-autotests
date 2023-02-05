@@ -38,8 +38,8 @@ const HW13 = () => {
         setCode(`Код ${res.status}!`)
         setImage(success200)
         // дописать
-        setInfo(res.data.errorText)
-        setText(res.data.info)
+        setInfo(res.data.info)
+        setText(res.data.errorText)
       })
       .catch((e) => {
         // дописать
