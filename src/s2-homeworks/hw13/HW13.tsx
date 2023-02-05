@@ -38,8 +38,8 @@ const HW13 = () => {
           setCode(`Код ${res.status}!`)
           setImage(success200)
           // дописать
-          setInfo(res.data.info)
           setText(res.data.errorText)
+          setInfo("")
         }
       })
       .catch((e) => {
@@ -47,14 +47,14 @@ const HW13 = () => {
         if (e.response.status) {
           setCode(`Ошибка ${e.response.status}!!`)
           setImage(e.response.status === 500 ? error500 : error400)
+          setText(e.response.data.info)
           setInfo('')
-          setText(e.response.data.errorText)
 
         } else {
           setImage(errorUnknown)
           setCode('Error')
-          setInfo(e.response.data.text)
           setText(e.response.data.errorText)
+          setInfo(e.response.data.text)
         }
       })
   }
