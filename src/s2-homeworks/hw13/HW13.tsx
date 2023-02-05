@@ -37,19 +37,18 @@ const HW13 = () => {
         setCode(`Код ${res.status}!`)
         setImage(success200)
         // дописать
-        setText(res.data.errorText)
-        setInfo(res.data.info)
+        setInfo(res.data.errorText)
+        setText(res.data.info)
       })
       .catch((e) => {
         // дописать
         if (e.response.status) {
           setCode(`Ошибка ${e.response.status}!!`)
           setImage(e.response.status === 500 ? error500 : error400)
-          setText(e.response.data.info)
-          setInfo(e.response.data.errorText)
+          setInfo(e.response.data.info)
+          setText(e.response.data.errorText)
 
         } else {
-          console.log(e.response)
           setImage(errorUnknown)
           setCode('Error')
           setText('Network Error')
