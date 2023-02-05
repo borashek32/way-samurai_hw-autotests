@@ -44,11 +44,11 @@ const HW13 = () => {
       .catch((e) => {
         // дописать
         if (e.response.status) {
-          // console.log(e)
+          console.log(e.response.data.errorText)
           setCode(`Ошибка ${e.response.status}!!`)
           setImage(e.response.status === 500 ? error500 : error400)
-          setInfo(e.response.data.info)
-          setText(e.response.data.errorText)
+          setInfo(e.response.data.errorText)
+          setText(e.response.data.info)
 
         } else {
           // console.log(e.name, e.message)
