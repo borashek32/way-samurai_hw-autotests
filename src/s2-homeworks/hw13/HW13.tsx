@@ -49,10 +49,11 @@ const HW13 = () => {
           setInfo(e.response.data.errorText)
 
         } else {
+          console.log(e.response)
           setImage(errorUnknown)
           setCode('Error')
-          setText(e.response.data.info)
-          setInfo(e.response.data.errorText)
+          setText('Network Error')
+          setInfo('AxiosError')
         }
       })
   }
