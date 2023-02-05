@@ -45,14 +45,14 @@ const HW13 = () => {
         if (e.response.status) {
           setCode(`Ошибка ${e.response.status}!!`)
           setImage(e.response.status === 500 ? error500 : error400)
-          setText(e.response.data.errorText)
-          setInfo(e.response.data.info)
+          setText(e.response.data.info)
+          setInfo(e.response.data.errorText)
 
         } else {
           setImage(errorUnknown)
           setCode('Error')
-          setText(e.response.data.errorText)
-          setInfo(e.response.data.text)
+          setText(e.response.data.info)
+          setInfo(e.response.data.errorText)
         }
       })
   }
