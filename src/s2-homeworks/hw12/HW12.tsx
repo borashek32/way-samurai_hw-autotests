@@ -59,6 +59,7 @@ const HW12 = () => {
           </div>
         </div>
       </div>
+      <hr/>
     </div>
   )
 }
