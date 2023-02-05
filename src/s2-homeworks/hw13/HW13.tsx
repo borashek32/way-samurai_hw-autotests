@@ -39,14 +39,14 @@ const HW13 = () => {
           setImage(success200)
           // дописать
           setInfo(res.data.info)
-          setText(res.data.text)
+          setText(res.data.errorText)
         }
       })
       .catch((e) => {
         // дописать
         if (e.response.status) {
           setCode(`Ошибка ${e.response.status}!!`)
-          setImage(e.response.status === 400 ? error400 : error500)
+          setImage(e.response.status === 500 ? error500 : error400)
           setInfo('')
           setText(e.response.data.errorText)
 
