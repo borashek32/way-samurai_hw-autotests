@@ -53,7 +53,6 @@ const HW14 = () => {
     // setSearchParams()
     setSearchParams(value)
     sendQuery(value)
-    //
   }
 
   useEffect(() => {
