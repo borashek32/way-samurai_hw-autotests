@@ -51,8 +51,8 @@ const HW14 = () => {
     setLoading(true)
     // добавить/заменить значение в квери урла
     // setSearchParams()
-    setSearchParams(value)
-    sendQuery(value)
+    setSearchParams({find: value})
+    // sendQuery(value)
   }
 
   useEffect(() => {
