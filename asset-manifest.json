@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/way-samurai_hw-autotests/static/css/main.7e5b147d.css",
-    "main.js": "/way-samurai_hw-autotests/static/js/main.a27c9a3a.js",
+    "main.css": "/way-samurai_hw-autotests/static/css/main.60544463.css",
+    "main.js": "/way-samurai_hw-autotests/static/js/main.b4b0e26a.js",
     "static/js/787.66cb4309.chunk.js": "/way-samurai_hw-autotests/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/way-samurai_hw-autotests/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/way-samurai_hw-autotests/static/media/200.96248f7df0dde10e0a82ac30418f50bc.svg",
@@ -15,12 +15,12 @@
     "index.html": "/way-samurai_hw-autotests/index.html",
     "static/media/checked.svg": "/way-samurai_hw-autotests/static/media/checked.b75ca55e8759862b4083.svg",
     "static/media/burger.svg": "/way-samurai_hw-autotests/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
-    "main.7e5b147d.css.map": "/way-samurai_hw-autotests/static/css/main.7e5b147d.css.map",
-    "main.a27c9a3a.js.map": "/way-samurai_hw-autotests/static/js/main.a27c9a3a.js.map",
+    "main.60544463.css.map": "/way-samurai_hw-autotests/static/css/main.60544463.css.map",
+    "main.b4b0e26a.js.map": "/way-samurai_hw-autotests/static/js/main.b4b0e26a.js.map",
     "787.66cb4309.chunk.js.map": "/way-samurai_hw-autotests/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e5b147d.css",
-    "static/js/main.a27c9a3a.js"
+    "static/css/main.60544463.css",
+    "static/js/main.b4b0e26a.js"
   ]
 }
