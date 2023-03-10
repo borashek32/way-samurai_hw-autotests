@@ -7,7 +7,6 @@ import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
-import message from "../hw01/message/Message";
 
 /*
 * 1 - дописать функцию send
