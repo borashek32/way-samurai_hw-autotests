@@ -30,15 +30,16 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
   }
   const selectedOption = options.filter(o => o.id === value)[0].value
 
-  const mappedOptions: any[] = options
+  const mappedOptions: any = options
     ? options.map((o, index) => (
         <option
           id={'hw7-option-' + o.id}
           className={s.option + ' ' + (value === o.id ? s.activeOption : '')}
           onClick={() => onChangeCallback(o.id)}
           key={o.id}
-          value={o.id}
-          selected={o.id === value}
+          value={value}
+          // value={o.id}
+          // selected={o.id === value}
         >
           {o.value}
         </option>
@@ -47,16 +48,18 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     : []
 
   return (
-    <div className={s.selectWrapper}>
-      <select
-        className={s.select + (active ? ' ' + s.active : '')}
-        {...restProps}
-        onClick={showOptions}
-      >
-        {/*{mappedOptions}*/}
-      </select>
-      <p className={s.selectedOption}>{selectedOption}</p>
-      {active && mappedOptions}
+    <div className={s.selectWrapper} onClick={showOptions}>
+      <div className={s.select + ' ' + (active ? s.active : "")} defaultValue={1}>
+        <span {...restProps} className={s.selectedOption}>
+          {selectedOption && selectedOption}
+        </span>
+
+        {active &&
+          <div className={s.items}>
+            {mappedOptions}
+          </div>
+        }
+      </div>
     </div>
   )
 }

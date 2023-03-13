@@ -1,10 +1,10 @@
 import React, {
-  ChangeEvent,
   InputHTMLAttributes,
   DetailedHTMLProps,
   HTMLAttributes,
 } from 'react'
 import s from './SuperRadio.module.css'
+import '../../../../variables.css'
 
 type DefaultRadioPropsType = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
@@ -18,7 +18,7 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
   options?: any[] //
-  onChangeOption?: (option: number) => void //
+  onChangeOption?: (option: any) => void //
   spanProps?: DefaultSpanPropsType // пропсы для спана // was ?
 }
 
@@ -32,10 +32,14 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                                                      spanProps,
                                                      ...restProps
                                                    }) => {
+
   const onChangeCallback = (id: number) => {
     // делают студенты
     if (onChangeOption) onChangeOption(id)
+    console.log(id)
   }
+
+  console.log(value)
 
   const className = 's.radio:before'
   const finalRadioClassName = s.radio + (value ? ' ' + className : '')
@@ -51,8 +55,11 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
           // name, checked, value делают студенты
           checked={o.id === value}
           value={o.id}
-          name={name}
-          onChange={() => onChangeCallback(o.id)}
+          name={o.id}
+          onChange={() => {
+            onChangeCallback(o.id)
+            console.log(value)
+          }}
           {...restProps}
         />
         <span
@@ -66,7 +73,9 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ))
     : []
 
-  return <div className={s.options}>{mappedOptions}</div>
+  return <>
+    <div className={s.options}>{mappedOptions}</div>
+  </>
 }
 
 export default SuperRadio

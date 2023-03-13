@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import SuperSelect from './common/c5-SuperSelect/SuperSelect'
 import SuperRadio from './common/c6-SuperRadio/SuperRadio'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW7.module.css'
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../hw10/bll/store";
 
 /*
 * 1 - в файле SuperSelect.tsx дописать логику функции onChangeCallback
@@ -23,6 +25,12 @@ const options: OptionType[] = [
 
 const HW7 = () => {
   const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
+
+  const themeId = useSelector<AppStoreType, number>(state => state.theme.themeId)
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = themeId + ''
+  }, [])
 
   return (
     <div id={'hw7'}>

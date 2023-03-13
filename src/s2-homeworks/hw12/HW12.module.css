@@ -2,11 +2,11 @@
 
 html {
     background-color: var(--background);
-    color: var(--color);
+    color: var(--color-text);
 }
 
 .select {
-    color: var(--color);
+    color: var(--color-text);
     background-color: var(--background);
 }
 .titleName {
@@ -15,5 +15,5 @@ html {
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 6px;
-    color: var(--color)
+    color: var(--color-text)
 }

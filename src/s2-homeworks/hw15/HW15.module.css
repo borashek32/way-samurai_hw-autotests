@@ -1,0 +1,31 @@
+.tech {
+    width: 50vw;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.developer {
+
+}
+
+.techHeader {
+    width: 50vw;
+}
+
+.developerHeader {
+
+}
+
+.row {
+    display: flex;
+}
+
+.rowHeader {
+    display: flex;
+}
+
+.loading {
+
+}

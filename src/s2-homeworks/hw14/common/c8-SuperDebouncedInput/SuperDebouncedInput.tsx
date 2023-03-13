@@ -29,7 +29,7 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
 
   const onChangeTextCallback = (value: string) => {
     onChangeText?.(value)
-console.log(value)
+
     if (onDebouncedChange) {
       // делает студент
       clearTimeout(timerId)
