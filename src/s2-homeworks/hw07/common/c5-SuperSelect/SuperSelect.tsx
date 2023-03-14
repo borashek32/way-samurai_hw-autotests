@@ -1,7 +1,6 @@
 import React, {SelectHTMLAttributes, DetailedHTMLProps, useState, CSSProperties} from 'react'
 import s from './SuperSelect.module.css'
 
-
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>,
   HTMLSelectElement>
 
@@ -34,18 +33,18 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
   const mappedOptions: any = options
     ? options.map((o, index) => (
-        <option
+        <div
           id={'hw7-option-' + o.id}
           className={s.option + ' ' + (value === o.id ? s.activeOption : '')}
           onClick={() => onChangeCallback(o.id)}
           key={o.id}
           // value={value}
           style={st}
-          value={o.id}
+          // value={o.id}
           // selected={o.id === value}
         >
           {o.value}
-        </option>
+        </div>
       )
     )
     : []

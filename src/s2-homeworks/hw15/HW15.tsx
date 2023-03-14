@@ -53,7 +53,7 @@ const HW15 = () => {
   const sendQuery = (params: ParamsType) => {
     setLoading(true)
 
-    setTimeout(() => {
+    // setTimeout(() => {
       getTechs(params)
         .then((res) => {
           // делает студент
@@ -65,7 +65,7 @@ const HW15 = () => {
           }
           //
         })
-    }, 600)
+    // }, 600)
   }
 
   const onChangePagination = (newPage: number, newCount: number) => {

@@ -11,12 +11,6 @@ export type SuperPaginationPropsType = {
   onChange: (page: number, count: number) => void
 }
 
-const options = [
-  {id: 4, value: 4},
-  {id: 7, value: 7},
-  {id: 10, value: 10},
-]
-
 const SuperPagination: React.FC<SuperPaginationPropsType> = (
   {
     page,
@@ -64,7 +58,11 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
           id={id + '-pagination-select'}
           value={itemsCountForPage}
           st={{width: "50px", padding: "4px 6px"}}
-          options={options}
+          options={[
+            {id: 4, value: 4},
+            {id: 7, value: 7},
+            {id: 10, value: 10},
+          ]}
           onChangeOption={onChangeSelect}
         />
 
