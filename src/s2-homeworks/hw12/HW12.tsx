@@ -5,7 +5,6 @@ import s3 from './../hw07/common/c5-SuperSelect/SuperSelect.module.css'
 import SuperSelect from '../hw07/common/c5-SuperSelect/SuperSelect'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppStoreType} from '../hw10/bll/store';
-import {OptionType} from "../hw07/HW7";
 import {changeThemeId} from "./bll/themeReducer";
 
 /*
@@ -15,7 +14,7 @@ import {changeThemeId} from "./bll/themeReducer";
 * 4 - передать пропсы в SuperSelect
 * */
 
-const themes: OptionType[] = [
+const themes: any[] = [
   {id: 1, value: 'light'},
   {id: 2, value: 'blue'},
   {id: 3, value: 'dark'},

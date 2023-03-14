@@ -12,12 +12,8 @@ import {AppStoreType} from "../hw10/bll/store";
 * 3 - в файле SuperRadio.tsx дописать name, checked, value (узнать для чего в радио name)
 * 4 - сделать стили в соответствии с дизайном
 * */
-export type OptionType = {
-  id: number
-  value: string
-}
 
-const options: OptionType[] = [
+const options: any[] = [
   {id: 1, value: 'Pre-junior'},
   {id: 2, value: 'Junior'},
   {id: 3, value: 'Junior +'},

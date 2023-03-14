@@ -1,23 +1,25 @@
-import React, {SelectHTMLAttributes, DetailedHTMLProps, useState} from 'react'
+import React, {SelectHTMLAttributes, DetailedHTMLProps, useState, CSSProperties} from 'react'
 import s from './SuperSelect.module.css'
-import {OptionType} from "../../HW7";
+
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>,
   HTMLSelectElement>
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-  options: OptionType[]
+  options: any[]
   onChangeOption?: (id: number) => void
+  st?: CSSProperties | undefined
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
-                                                       options,
-                                                       className,
-                                                       onChange,
-                                                       value,
-                                                       onChangeOption,
-                                                       ...restProps
-                                                     }) => {
+  st,
+  options,
+  className,
+  onChange,
+  value,
+  onChangeOption,
+  ...restProps
+}) => {
 
   const [active, setActive] = useState(false)
   const showOptions = () => setActive(!active)
@@ -37,8 +39,9 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
           className={s.option + ' ' + (value === o.id ? s.activeOption : '')}
           onClick={() => onChangeCallback(o.id)}
           key={o.id}
-          value={value}
-          // value={o.id}
+          // value={value}
+          style={st}
+          value={o.id}
           // selected={o.id === value}
         >
           {o.value}
@@ -49,7 +52,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
   return (
     <div className={s.selectWrapper} onClick={showOptions}>
-      <div className={s.select + ' ' + (active ? s.active : "")} defaultValue={1}>
+      <div className={s.select + ' ' + (active ? s.active : "")} defaultValue={1} style={st}>
         <span {...restProps} className={s.selectedOption}>
           {selectedOption && selectedOption}
         </span>
