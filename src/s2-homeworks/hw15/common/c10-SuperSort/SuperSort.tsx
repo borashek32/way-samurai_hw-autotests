@@ -1,13 +1,13 @@
 import React from 'react'
-import noneIcon from './none.png'
-import upIcon from './up.png'
-import downIcon from './down.png'
+import noneI from './none.png'
+import upI from './up.png'
+import downI from './down.png'
 import s from './../../HW15.module.css'
 
 // добавить в проект иконки и импортировать
-// const downIcon = '[\\/]'
-// const upIcon = '[/\\]'
-// const noneIcon = '[--]'
+const downIcon = downI
+const upIcon = upI
+const noneIcon = noneI
 
 export type SuperSortPropsType = {
   id?: string
