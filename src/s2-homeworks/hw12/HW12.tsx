@@ -48,6 +48,7 @@ const HW12 = () => {
           <div className={s2.hw}>
             <p className={s.titleName}>Выберите тему</p>
             <SuperSelect
+              st={{width: "180px", appearance: "none"}}
               id={'hw12-select-theme'}
               className={select}
               // сделать переключение тем

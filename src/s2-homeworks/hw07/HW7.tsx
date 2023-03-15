@@ -44,6 +44,7 @@ const HW7 = () => {
                 options={options}
                 value={value}
                 onChangeOption={onChangeOption}
+                st={{width: "180px", appearance: "none"}}
               />
             </div>
             <div>
