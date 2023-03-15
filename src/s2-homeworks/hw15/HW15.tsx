@@ -72,7 +72,7 @@ const HW15 = () => {
     // делает студент
     setPage(newPage)
     setCount(newCount)
-    setSearchParams(`?page=${newPage}&count=${newCount}`)
+    setSearchParams({page: page.toString(), count: count.toString()})
     sendQuery({page: newPage, count: newCount, sort})
     //
   }
